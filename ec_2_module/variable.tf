@@ -1,19 +1,10 @@
-variable "ami_id" {
-    default = "ami-08d4ac5b634553e16"  
-
-variable "instance_type" {
-    default = "t2.micro"
+provider "aws" {
+    region = "us-east-1"
 }
 
-variable "vpc_id" {
-    default = "vpc-0f2df21182680da97"    
-}
-
-variable "port" {
-    default = 22
-}
-
-variable "cidr_block" {
-    default = "0.0.0.0/0"
+resource "aws_instance" "terra_2" {
+    ami = var.ami_id   
+    instance_type = var.instance_type  
+  
 }
 
